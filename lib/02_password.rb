@@ -1,19 +1,39 @@
 def sign_up
-    puts "Rentrez votre password"
+    puts "Créer votre password"
     print "> "
     password = gets.chomp
-return password
-end
-sign_up
-def login
+
+    begin
     puts "Confirmez votre password"
     print "> "
-    password2 = gets.chomp
-    password = sign_up
-    if password2 == password
-        puts "Success"
-        else
-        puts "You failed... Try again"
-    end
+    $password2 = gets.chomp
+    end while
+    $password2 != password
+return password
 end
-login
+
+
+def login 
+
+    begin
+    puts "rentre ton mdp fdp"
+    login2 = gets.chomp
+    end while
+    login2 != $password2
+    return $password2
+end 
+
+
+
+def welcome_screen 
+        puts "Success"
+        puts "Secret de la NSA : En synergie avec la compétitivité qualitative, il est requis de valoriser les axes mobilisateurs convivialité."
+end
+
+
+def perform
+    sign_up
+    login
+    welcome_screen
+end
+  perform
